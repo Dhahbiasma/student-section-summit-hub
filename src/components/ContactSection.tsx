@@ -25,21 +25,21 @@ const ContactSection = () => (
         <motion.div variants={fadeUp} className="p-8 border border-primary/30 rounded-sm bg-primary/5 text-center space-y-4">
           <h3 className="font-display text-2xl font-bold text-foreground">🎟️ Registrations are NOW OPEN!</h3>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Secure your spot and join us for 3 days of inspiration, challenge, and success. 
+            Secure your spot and join us for 3 days of inspiration, challenge, and success.
             SSS Student Section Summit — Where Students Become Leaders.
           </p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScKuGG5gf47sT/viewform" target="_blank" rel="noopener noreferrer"
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScKuGG5gf47sT4OZJ8HB7CjLfEPBQ_6NWlNc9hpsXnzDMxAYw/viewform?fbclid=IwY2xjawQfuxZleHRuA2FlbQIxMABicmlkETFUUFI3UE1GeU42ck9aaWsyc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHuzYgD-6LozAbPUj4YvWmnKL1Ts_kT1oIDE6coJEyEtt6AB9PAyYMeAv7nkI_aem_9rZ4tDTj7zTj5woDhatKZg" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-red-gradient text-primary-foreground px-8 py-3 font-body text-sm font-semibold tracking-wider uppercase rounded-sm hover:opacity-90 transition-opacity">
             Register Now <ExternalLink className="w-4 h-4" />
           </a>
         </motion.div>
 
         <motion.div variants={fadeUp} className="grid sm:grid-cols-2 gap-6">
-          <a href="mailto:contact@atast-sss.org" className="flex items-center gap-4 p-6 border border-border rounded-sm bg-background hover:border-primary/40 transition-colors">
+          <a href="mailto:studentsection.atast@gmail.com" className="flex items-center gap-4 p-6 border border-border rounded-sm bg-background hover:border-primary/40 transition-colors">
             <Mail className="w-6 h-6 text-primary flex-shrink-0" />
             <div>
               <p className="text-foreground font-medium">Email Us</p>
-              <p className="text-muted-foreground text-sm">contact@atast-sss.org</p>
+              <p className="text-muted-foreground text-sm">studentsection.atast@gmail.com</p>
             </div>
           </a>
           <a href="tel:+21600000000" className="flex items-center gap-4 p-6 border border-border rounded-sm bg-background hover:border-primary/40 transition-colors">
@@ -49,18 +49,18 @@ const ContactSection = () => (
               <p className="text-muted-foreground text-sm">+216 00 000 000</p>
             </div>
           </a>
-          <a href="https://facebook.com/ATASTStudentSection" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-6 border border-border rounded-sm bg-background hover:border-accent/40 transition-colors">
+          <a href="https://www.facebook.com/atast.ss" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-6 border border-border rounded-sm bg-background hover:border-accent/40 transition-colors">
             <Facebook className="w-6 h-6 text-accent flex-shrink-0" />
             <div>
               <p className="text-foreground font-medium">Facebook</p>
               <p className="text-muted-foreground text-sm">ATAST Student Section</p>
             </div>
           </a>
-          <a href="https://instagram.com/atast_sss" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-6 border border-border rounded-sm bg-background hover:border-accent/40 transition-colors">
+          <a href="https://www.instagram.com/atast.student.section?igsh=MWNvNzA1cGxhdWphdg==" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-6 border border-border rounded-sm bg-background hover:border-accent/40 transition-colors">
             <Instagram className="w-6 h-6 text-accent flex-shrink-0" />
             <div>
               <p className="text-foreground font-medium">Instagram</p>
-              <p className="text-muted-foreground text-sm">@atast_sss</p>
+              <p className="text-muted-foreground text-sm">@atast.student.section</p>
             </div>
           </a>
         </motion.div>

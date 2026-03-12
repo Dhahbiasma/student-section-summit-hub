@@ -32,10 +32,13 @@ function useCountdown(target: Date) {
 }
 
 const themes = [
-  { year: "2026", theme: "Transportation", trailer: "https://www.youtube.com/watch?v=TRAILER_2026", current: true },
-  { year: "2025", theme: "Tourism", trailer: "https://www.youtube.com/watch?v=TRAILER_2025" },
-  { year: "2024", theme: "Sports", trailer: "https://www.youtube.com/watch?v=TRAILER_2024" },
-  { year: "2023", theme: "Education", trailer: "https://www.youtube.com/watch?v=TRAILER_2023" },
+  { 
+    year: "2026", 
+    theme: "Transportation", 
+    trailer: "https://www.facebook.com/share/v/1FU1ybC79z/", 
+    recap: null, // Indicates coming soon
+    current: true 
+  },
 ];
 
 const summitLetters = "Summit".split("");
@@ -134,8 +137,8 @@ const HeroSection = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.6 + i * 0.1, duration: 0.5 }}
                   className={`relative group px-5 py-3 rounded-sm border transition-all duration-300 ${t.current
-                      ? "border-primary/50 bg-primary/10"
-                      : "border-border bg-card/40 hover:border-primary/30"
+                    ? "border-primary/50 bg-primary/10"
+                    : "border-border bg-card/40 hover:border-primary/30"
                     }`}
                 >
                   {t.current && (
@@ -145,15 +148,33 @@ const HeroSection = () => {
                   )}
                   <p className="font-display text-lg font-bold text-foreground">{t.year}</p>
                   <p className="text-muted-foreground text-xs tracking-wider uppercase">{t.theme}</p>
-                  <a
-                    href={t.trailer}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-1.5 inline-flex items-center gap-1 text-accent text-[10px] tracking-wider uppercase font-semibold hover:text-primary transition-colors"
-                  >
-                    <Play className="w-2.5 h-2.5 fill-current" />
-                    Trailer
-                  </a>
+                  <div className="flex items-center gap-4 mt-3">
+                    <a
+                      href={t.trailer}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-accent text-[10px] tracking-wider uppercase font-semibold hover:text-primary transition-colors"
+                    >
+                      <Play className="w-3 h-3 fill-current" />
+                      Trailer
+                    </a>
+                    {t.recap ? (
+                      <a
+                        href={t.recap}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-primary text-[10px] tracking-wider uppercase font-semibold hover:text-accent transition-colors"
+                      >
+                        <Play className="w-3 h-3 fill-current" />
+                        Recap
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 text-muted-foreground/50 text-[10px] tracking-wider uppercase font-semibold cursor-help" title="Will come soon">
+                        <Play className="w-3 h-3" />
+                        Recap (Coming soon)
+                      </span>
+                    )}
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -213,7 +234,7 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div variants={fadeUp} custom={6} className="flex flex-wrap gap-4 justify-center pt-4">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKuGG5gf47sT/viewform" target="_blank" rel="noopener noreferrer"
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKuGG5gf47sT4OZJ8HB7CjLfEPBQ_6NWlNc9hpsXnzDMxAYw/viewform?usp=dialog&fbclid=IwY2xjawQfuMpleHRuA2FlbQIxMABicmlkETFUUFI3UE1GeU42ck9aaWsyc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHuzYgD-6LozAbPUj4YvWmnKL1Ts_kT1oIDE6coJEyEtt6AB9PAyYMeAv7nkI_aem_9rZ4tDTj7zTj5woDhatKZg" target="_blank" rel="noopener noreferrer"
               className="bg-red-gradient text-primary-foreground px-10 py-4 font-body text-sm font-semibold tracking-wider uppercase rounded-sm hover:opacity-90 transition-opacity">
               Register Now
             </a>

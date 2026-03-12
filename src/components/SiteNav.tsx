@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import atastLogo from "@/assets/atast-logo.png";
 
-const links = ["About", "What We Do", "Speakers", "Schedule", "Contact"];
+const links = ["About", "What We Do", "Speakers", "Schedule", "Archives", "Contact"];
 
 const SiteNav = () => {
   const [open, setOpen] = useState(false);
@@ -27,7 +27,7 @@ const SiteNav = () => {
               {label}
             </a>
           ))}
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScKuGG5gf47sT/viewform" target="_blank" rel="noopener noreferrer"
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScKuGG5gf47sT4OZJ8HB7CjLfEPBQ_6NWlNc9hpsXnzDMxAYw/viewform?fbclid=IwY2xjawQfuMpleHRuA2FlbQIxMABicmlkETFUUFI3UE1GeU42ck9aaWsyc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHuzYgD-6LozAbPUj4YvWmnKL1Ts_kT1oIDE6coJEyEtt6AB9PAyYMeAv7nkI_aem_9rZ4tDTj7zTj5woDhatKZg" target="_blank" rel="noopener noreferrer"
             className="bg-red-gradient text-primary-foreground px-5 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm hover:opacity-90 transition-opacity">
             Register
           </a>

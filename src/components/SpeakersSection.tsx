@@ -16,95 +16,25 @@ const categories = [
     id: "conference",
     label: "Conference Speakers",
     icon: Mic,
-    people: [
-      {
-        name: "Dr. Amira Ben Salah",
-        title: "AI & Data Science Researcher",
-        bio: "Leading researcher in machine learning with 15+ years of experience. Published over 50 papers in top-tier journals.",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face",
-        linkedin: "#",
-        twitter: "#",
-      },
-      {
-        name: "Prof. Karim Trabelsi",
-        title: "Renewable Energy Expert",
-        bio: "Pioneer in solar energy research across North Africa. Advisor to multiple international sustainability initiatives.",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-        linkedin: "#",
-      },
-    ],
+    people: [],
   },
   {
     id: "roundtable",
     label: "Round Table Speakers",
     icon: Presentation,
-    people: [
-      {
-        name: "Dr. Fatma Gharbi",
-        title: "Biotech Entrepreneur",
-        bio: "Founded two biotech startups and advocates for women in STEM. Mentor to over 100 young scientists.",
-        image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=300&h=300&fit=crop&crop=face",
-        linkedin: "#",
-        twitter: "#",
-      },
-      {
-        name: "Nabil Marzougui",
-        title: "Sustainable Transport Expert",
-        bio: "Advisor on smart mobility and sustainable transportation policy across the MENA region.",
-        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face",
-        linkedin: "#",
-      },
-    ],
+    people: [],
   },
   {
     id: "trainers",
     label: "Workshop Trainers",
     icon: Wrench,
-    people: [
-      {
-        name: "Yasmine Chaabane",
-        title: "UX Design Director",
-        bio: "Award-winning designer who has shaped digital products used by millions. Passionate about design education.",
-        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face",
-        linkedin: "#",
-        twitter: "#",
-      },
-      {
-        name: "Amine Bouaziz",
-        title: "Cybersecurity Specialist",
-        bio: "Ethical hacker and security consultant. Trains organizations and students on modern threat prevention.",
-        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face",
-        linkedin: "#",
-      },
-    ],
+    people: [],
   },
   {
     id: "organizers",
     label: "Organizers",
     icon: Users,
-    people: [
-      {
-        name: "Mohamed Amine Jlassi",
-        title: "ATAST SSS President",
-        bio: "Visionary student leader driving the summit's mission to connect academia with industry across Tunisia.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-        linkedin: "#",
-      },
-      {
-        name: "Salma Riahi",
-        title: "SSS Event Coordinator",
-        bio: "Master organizer ensuring every detail of the 3-day summit runs smoothly and memorably.",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-        linkedin: "#",
-      },
-      {
-        name: "Yassine Khelifi",
-        title: "B-Tech Competition Lead",
-        bio: "Coordinates the B-Tech competition and manages jury selection for fair, impactful judging.",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face",
-        linkedin: "#",
-      },
-    ],
+    people: [],
   },
 ];
 
@@ -174,43 +104,49 @@ const SpeakersSection = () => {
             exit={{ opacity: 0, y: -12 }}
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {activeCategory.people.map((s) => (
-              <motion.div
-                key={s.name}
-                variants={item}
-                whileHover={{ y: -6 }}
-                className="group border border-border rounded-sm bg-card overflow-hidden hover:border-primary/40 transition-colors duration-300"
-              >
-                <div className="aspect-[4/3] overflow-hidden relative">
-                  <img
-                    src={s.image}
-                    alt={s.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <div className="p-6 space-y-3">
-                  <div>
-                    <h3 className="font-display text-xl font-semibold text-foreground mt-1">{s.name}</h3>
-                    <p className="text-muted-foreground text-sm">{s.title}</p>
+            {activeCategory.people.length > 0 ? (
+              activeCategory.people.map((s) => (
+                <motion.div
+                  key={s.name}
+                  variants={item}
+                  whileHover={{ y: -6 }}
+                  className="group border border-border rounded-sm bg-card overflow-hidden hover:border-primary/40 transition-colors duration-300"
+                >
+                  <div className="aspect-[4/3] overflow-hidden relative">
+                    <img
+                      src={s.image}
+                      alt={s.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{s.bio}</p>
-                  <div className="flex gap-3 pt-1">
-                    {s.linkedin && (
-                      <a href={s.linkedin} className="text-muted-foreground hover:text-primary transition-colors" aria-label={`${s.name} LinkedIn`}>
-                        <Linkedin className="w-4 h-4" />
-                      </a>
-                    )}
-                    {s.twitter && (
-                      <a href={s.twitter} className="text-muted-foreground hover:text-accent transition-colors" aria-label={`${s.name} Twitter`}>
-                        <Twitter className="w-4 h-4" />
-                      </a>
-                    )}
+                  <div className="p-6 space-y-3">
+                    <div>
+                      <h3 className="font-display text-xl font-semibold text-foreground mt-1">{s.name}</h3>
+                      <p className="text-muted-foreground text-sm">{s.title}</p>
+                    </div>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{s.bio}</p>
+                    <div className="flex gap-3 pt-1">
+                      {s.linkedin && (
+                        <a href={s.linkedin} className="text-muted-foreground hover:text-primary transition-colors" aria-label={`${s.name} LinkedIn`}>
+                          <Linkedin className="w-4 h-4" />
+                        </a>
+                      )}
+                      {s.twitter && (
+                        <a href={s.twitter} className="text-muted-foreground hover:text-accent transition-colors" aria-label={`${s.name} Twitter`}>
+                          <Twitter className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
+                </motion.div>
+              ))
+            ) : (
+              <motion.div variants={item} className="col-span-full py-12 text-center">
+                <p className="text-2xl font-display text-muted-foreground">speakers comming soon</p>
               </motion.div>
-            ))}
+            )}
           </motion.div>
         </AnimatePresence>
       </div>
