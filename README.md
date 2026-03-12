@@ -1,73 +1,107 @@
-# Welcome to your Lovable project
+# Student Section Summit
 
-## Project info
+## Project Info
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**Website URL**: [https://sss-summit-hub-main.vercel.app/](https://sss-summit-hub-main.vercel.app/)
 
-## How can I edit this code?
+This is the official website for the **Student Section Summit**, providing students with information, updates, and resources related to the summit.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## How to Edit This Project
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+You can make changes to the website in several ways:
 
-Changes made via Lovable will be committed automatically to this repo.
+### 1. Using Your Local IDE
 
-**Use your preferred IDE**
+Ensure you have **Node.js** and **npm** installed (recommended via [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)).
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Go into the project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server with live reload
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### 2. Edit Files Directly on GitHub
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+* Navigate to the file you want to change.
+* Click the pencil icon to edit.
+* Commit your changes directly to the repository.
 
-**Use GitHub Codespaces**
+### 3. Using GitHub Codespaces
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+* Go to the main page of your repository.
+* Click **Code** → **Codespaces** → **New codespace**.
+* Edit files and commit changes from within the Codespace.
 
-## What technologies are used for this project?
+---
+
+## Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+* Vite
+* TypeScript
+* React
+* Tailwind CSS
+* shadcn-ui
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Deployment
 
-## Can I connect a custom domain to my Lovable project?
+This site is hosted on **Vercel**. To deploy updates:
 
-Yes, you can!
+1. Push your changes to the repository.
+2. Vercel automatically rebuilds and updates the live site.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Custom Domain
+
+You can connect a custom domain via **Vercel** settings if needed.
+
+---
+
+## HTML Entry Point
+
+Your main site HTML (`index.html`) is structured as follows:
+
+```html
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Student Section Summit</title>
+  <meta name="description" content="Official Student Section Summit Website" />
+  <meta name="author" content="ATAST" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Student Section Summit" />
+  <meta property="og:description" content="Official Student Section Summit Website" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/logo_atast.ico" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
+```
+
+This file serves as the main entry point for your React application.
