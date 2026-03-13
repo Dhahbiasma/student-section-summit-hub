@@ -147,8 +147,8 @@ const ScheduleSection = () => {
                     <div className="space-y-3">
                       {selectedDayData.events.map((ev, i) => (
                         <motion.div key={ev.title} initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.06, duration: 0.4 }}
-                          whileHover={{ x: 4 }}
-                          className="p-4 border border-border rounded-sm bg-card hover:border-primary/30 transition-colors">
+                          whileHover={{ x: 4, y: -2, scale: 1.01 }}
+                          className="p-4 border border-border rounded-sm bg-card hover:border-primary/30 transition-all hover:shadow-[0_4px_15px_rgba(255,0,0,0.1)]">
                           <div className="flex items-center gap-3 mb-1.5">
                             <div className="flex items-center gap-2 text-primary text-xs tracking-wider uppercase font-medium">
                               <Clock className="w-3.5 h-3.5" />

@@ -1,6 +1,36 @@
-import { motion } from "framer-motion";
+import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { GraduationCap, Globe2, Trophy, Users } from "lucide-react";
 import atastLogo from "@/assets/atast-logo.png";
+
+const AnimatedStat = ({ value }: { value: string }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  const match = value.match(/^(\D*)(\d+)(.*)$/);
+  const prefix = match ? match[1] : "";
+  const targetNumber = match ? parseInt(match[2], 10) : NaN;
+  const suffix = match ? match[3] : "";
+
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => prefix + Math.round(latest) + suffix);
+
+  useEffect(() => {
+    if (isInView && !isNaN(targetNumber)) {
+      const controls = animate(count, targetNumber, {
+        duration: 2,
+        ease: "easeOut",
+      });
+      return controls.stop;
+    }
+  }, [isInView, targetNumber, count]);
+
+  if (isNaN(targetNumber)) {
+    return <span>{value}</span>;
+  }
+
+  return <motion.span ref={ref}>{rounded}</motion.span>;
+};
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -98,9 +128,9 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="relative"
+                className="relative group"
               >
-                <div className="p-8 sm:p-10 border border-border rounded-sm bg-card/60 backdrop-blur-sm text-center space-y-5">
+                <div className="p-8 sm:p-10 border border-border rounded-sm glass-panel text-center space-y-5 transition-all duration-300 group-hover:border-primary/20 group-hover:-translate-y-1">
                   {/* Decorative top line */}
                   <div className={`w-16 h-0.5 mx-auto ${idx % 2 === 0 ? 'bg-red-gradient' : 'bg-blue-gradient'}`} />
 
@@ -132,11 +162,14 @@ const AboutSection = () => {
               <motion.div
                 key={s.label}
                 whileHover={{ scale: 1.05, y: -4 }}
-                className="text-center p-6 border border-border rounded-sm bg-card hover:border-primary/30 transition-colors cursor-default"
+                className="text-center p-6 border border-border rounded-sm bg-card hover:border-primary/40 transition-all cursor-default relative overflow-hidden group hover:shadow-xl hover:shadow-primary/10"
               >
-                <s.icon className="w-6 h-6 text-primary mx-auto mb-3" />
-                <p className="font-display text-3xl font-bold text-foreground">{s.value}</p>
-                <p className="text-muted-foreground text-sm mt-1">{s.label}</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <s.icon className="w-6 h-6 text-primary mx-auto mb-3 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                <p className="font-display text-3xl font-bold text-foreground relative z-10">
+                  <AnimatedStat value={s.value} />
+                </p>
+                <p className="text-muted-foreground text-sm mt-1 relative z-10">{s.label}</p>
               </motion.div>
             ))}
           </motion.div>

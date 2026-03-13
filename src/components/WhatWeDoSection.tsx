@@ -51,7 +51,7 @@ const WhatWeDoSection = () => {
             <motion.div key={a.title} variants={item}
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative p-6 border border-border rounded-sm bg-background hover:border-primary/40 transition-all duration-300 cursor-default overflow-hidden"
+              className="group relative p-6 border border-border rounded-sm bg-background hover:border-primary/40 transition-all duration-300 cursor-default overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5"
             >
               <AnimatePresence>
                 {hoveredIndex === i && (
@@ -64,7 +64,13 @@ const WhatWeDoSection = () => {
                 )}
               </AnimatePresence>
               <div className="relative z-10">
-                <a.icon className={`w-7 h-7 ${a.color} mb-4`} strokeWidth={1.5} />
+                <motion.div
+                  animate={hoveredIndex === i ? { scale: 1.15, rotate: [-5, 5, 0] } : { scale: 1, rotate: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="inline-block"
+                >
+                  <a.icon className={`w-7 h-7 ${a.color} mb-4`} strokeWidth={1.5} />
+                </motion.div>
                 <h3 className="font-display text-base font-semibold text-foreground mb-2">{a.title}</h3>
                 <p className="text-muted-foreground leading-relaxed text-xs">{a.description}</p>
               </div>

@@ -198,9 +198,9 @@ const HeroSection = () => {
                 <motion.div
                   key={unit.val}
                   initial={{ rotateX: -20, opacity: 0.7 }}
-                  animate={{ rotateX: 0, opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-16 h-16 sm:w-20 sm:h-20 border border-primary/30 rounded-sm bg-primary/5 flex items-center justify-center"
+                  animate={{ rotateX: 0, opacity: 1, y: [0, -4, 0] }}
+                  transition={{ duration: 0.3, y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: Math.random() * 2 } }}
+                  className="w-16 h-16 sm:w-20 sm:h-20 border border-primary/30 rounded-sm bg-primary/5 shadow-[0_0_15px_rgba(255,0,0,0.1)] flex items-center justify-center glow-red"
                 >
                   <span className="font-display text-2xl sm:text-3xl font-bold text-foreground">{String(unit.val).padStart(2, '0')}</span>
                 </motion.div>
@@ -235,11 +235,11 @@ const HeroSection = () => {
 
           <motion.div variants={fadeUp} custom={6} className="flex flex-wrap gap-4 justify-center pt-4">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScKuGG5gf47sT4OZJ8HB7CjLfEPBQ_6NWlNc9hpsXnzDMxAYw/viewform?usp=dialog&fbclid=IwY2xjawQfuMpleHRuA2FlbQIxMABicmlkETFUUFI3UE1GeU42ck9aaWsyc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHuzYgD-6LozAbPUj4YvWmnKL1Ts_kT1oIDE6coJEyEtt6AB9PAyYMeAv7nkI_aem_9rZ4tDTj7zTj5woDhatKZg" target="_blank" rel="noopener noreferrer"
-              className="bg-red-gradient text-primary-foreground px-10 py-4 font-body text-sm font-semibold tracking-wider uppercase rounded-sm hover:opacity-90 transition-opacity">
+              className="bg-red-gradient text-primary-foreground px-10 py-4 font-body text-sm font-semibold tracking-wider uppercase rounded-sm hover:opacity-100 hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,0,0,0.4)] hover:shadow-[0_0_30px_rgba(255,0,0,0.6)]">
               Register Now
             </a>
             <a href="#about"
-              className="border border-accent/40 text-accent px-10 py-4 font-body text-sm font-semibold tracking-wider uppercase rounded-sm hover:bg-accent/10 transition-colors">
+              className="border border-accent/40 text-accent px-10 py-4 font-body text-sm font-semibold tracking-wider uppercase rounded-sm hover:bg-accent/10 hover:scale-105 active:scale-95 transition-all">
               Learn More
             </a>
           </motion.div>
