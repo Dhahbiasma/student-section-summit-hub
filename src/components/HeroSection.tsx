@@ -198,9 +198,9 @@ const HeroSection = () => {
                 <motion.div
                   key={unit.val}
                   initial={{ rotateX: -20, opacity: 0.7 }}
-                  animate={{ rotateX: 0, opacity: 1, y: [0, -4, 0] }}
-                  transition={{ duration: 0.3, y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: Math.random() * 2 } }}
-                  className="w-16 h-16 sm:w-20 sm:h-20 border border-primary/30 rounded-sm bg-primary/5 shadow-[0_0_15px_rgba(255,0,0,0.1)] flex items-center justify-center glow-red"
+                  animate={{ rotateX: 0, opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  className="w-16 h-16 sm:w-20 sm:h-20 border border-primary/30 rounded-sm bg-primary/5 flex items-center justify-center"
                 >
                   <span className="font-display text-2xl sm:text-3xl font-bold text-foreground">{String(unit.val).padStart(2, '0')}</span>
                 </motion.div>
