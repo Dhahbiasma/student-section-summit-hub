@@ -21,7 +21,7 @@ const stats = [
 
 const sections = [
   {
-    title: "About ATAST",
+    title: "ATAST",
     paragraphs: [
       "Association Tunisienne pour l'Avenir des Sciences et Technologies abrégé ATAST was founded in 2007 by Hatem Slimane as a school club before being announced in the JORT in 2012.",
       "Since its first appearance, ATAST has tried to advance the field of science and technology in Tunisia, and these efforts have paid off on a national and international scale.",
@@ -29,7 +29,7 @@ const sections = [
     ],
   },
   {
-    title: "About Student Section",
+    title: "Student Section",
     paragraphs: [
       "The ATAST Student Section is the section of ATAST that deals with the student category and universities, which encompasses 24 ATAST clubs in different universities across various disciplines.",
       "The goal of the ATAST Student Section is to foster the talents of students in the field of science and technology while developing an entrepreneurial spirit.",
@@ -37,7 +37,7 @@ const sections = [
     ],
   },
   {
-    title: "About Student Section Summit",
+    title: "Student Section Summit",
     paragraphs: [
       "The ATAST Student Section Summit SSS is the annual meeting for the ATAST Clubs. During this event, there will be an annual awards that will be given in an award ceremony to recognize ATAST clubs achievements.",
       "Conferences and trainings will take place throughout the SSS, providing Atastians with the opportunity to learn about innovative topics from industry leaders.",
@@ -45,7 +45,7 @@ const sections = [
     ],
   },
   {
-    title: "About B-Tech",
+    title: "B-Tech",
     paragraphs: [
       "The B-Tech competition, a premier showcase of business and technology innovation, takes place during the I-FEST², the International Festival of Engineering Science and Technology in Tunisia.",
       "This festival, organized by ATAST, offers a dynamic platform for the 24 participating ATAST clubs to present their projects that align with a specific theme.",
@@ -53,7 +53,7 @@ const sections = [
     ],
   },
   {
-    title: "About B-Tech Junior",
+    title: "B-Tech Junior",
     paragraphs: [
       "B-Tech Junior is a program aimed at school clubs participants aged between 12–18 years old. It follows the same concept as the original B-Tech program, but without the debate session.",
       "The program has a separate theme than the one used in BTech, and it is tailored to the age group of the participants.",
@@ -61,7 +61,7 @@ const sections = [
     ],
   },
   {
-    title: "About Student Talent Show",
+    title: "Student Talent Show",
     paragraphs: [
       "The Student Talent Show marks an exciting new challenge organized by ATAST. This first edition is more than just a performance night — it's a celebration of Tunisian creativity, passion and the incredible diversity of talent.",
       "Students will take the stage to share their artistic gifts, whether through music, dance, theater, spoken word or any form of creative expression.",
@@ -103,7 +103,7 @@ const AboutSection = () => {
                 <div className="p-8 sm:p-10 border border-border rounded-sm bg-card/60 backdrop-blur-sm text-center space-y-5">
                   {/* Decorative top line */}
                   <div className={`w-16 h-0.5 mx-auto ${idx % 2 === 0 ? 'bg-red-gradient' : 'bg-blue-gradient'}`} />
-                  
+
                   <h3 className="font-display text-2xl sm:text-3xl font-bold text-foreground italic">
                     {section.title}
                   </h3>

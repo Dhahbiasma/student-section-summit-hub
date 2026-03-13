@@ -7,71 +7,35 @@ const clubs = [
   "ISIMM", "EDUCATORS", "UPSAT", "ISA-CM", "ENIT", "ISIGK", "ISTMT",
 ];
 
-interface PrizeWinner {
-  year: string;
-  club: string;
-}
-
 interface Prize {
   icon: typeof Trophy;
   title: string;
-  winners: PrizeWinner[];
 }
 
 const prizes: Prize[] = [
   {
     icon: Trophy,
     title: "Best Club",
-    winners: [
-      { year: "2025", club: "ISITCOM" },
-      { year: "2024", club: "ISSATSO" },
-      { year: "2023", club: "EPI" },
-    ],
   },
   {
     icon: Users,
     title: "Best Community Management",
-    winners: [
-      { year: "2025", club: "ESSTHS" },
-      { year: "2024", club: "ISITCOM" },
-      { year: "2023", club: "ISIMM" },
-    ],
   },
   {
     icon: Star,
     title: "Best Event",
-    winners: [
-      { year: "2025", club: "ISSATSO" },
-      { year: "2024", club: "FMS" },
-      { year: "2023", club: "ISITCOM" },
-    ],
   },
   {
     icon: DollarSign,
     title: "Best Financial Stability",
-    winners: [
-      { year: "2025", club: "EPI" },
-      { year: "2024", club: "ESSTHS" },
-      { year: "2023", club: "ISSATSO" },
-    ],
   },
   {
     icon: Handshake,
     title: "Best Collab",
-    winners: [
-      { year: "2025", club: "ISIMM" },
-      { year: "2024", club: "ISA-CM" },
-      { year: "2023", club: "UPSAT" },
-    ],
   },
   {
     icon: Camera,
     title: "Best Project of the Year",
-    winners: [
-      { year: "2025", club: "ISITCOM" },
-      { year: "2024", club: "EPI" },
-      { year: "2023", club: "ISSATSO" },
-    ],
   },
 ];
 
@@ -130,7 +94,7 @@ const ParticipantsSection = () => {
             <h2 className="font-display text-4xl sm:text-5xl font-bold text-foreground">
               The SSS <span className="text-gradient-red">Prize</span>
             </h2>
-            <p className="text-muted-foreground text-sm">Click a prize to see past winners</p>
+            <p className="text-muted-foreground text-sm">Click a prize to learn more</p>
           </div>
 
           <motion.div
@@ -162,13 +126,10 @@ const ParticipantsSection = () => {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div className="mt-3 pt-3 border-t border-border space-y-2">
-                          {prize.winners.map((w) => (
-                            <div key={w.year} className="flex items-center justify-between text-xs">
-                              <span className="text-primary font-bold">{w.year}</span>
-                              <span className="text-foreground font-medium">{w.club}</span>
-                            </div>
-                          ))}
+                        <div className="mt-3 pt-3 border-t border-border space-y-2 text-center pb-1">
+                          <span className="text-muted-foreground text-xs italic">
+                            information will be added here soon
+                          </span>
                         </div>
                       </motion.div>
                     )}
